@@ -1,9 +1,8 @@
 import 'package:get/get.dart';
-import 'package:primerapp/presenter/controller/camera_controller.dart';
+import 'package:primerapp/presenter/controller/about_controller.dart';
 import 'package:primerapp/presenter/controller/home_screen_controller.dart';
 import 'package:primerapp/presenter/controller/profile_controller.dart';
 import 'package:primerapp/presenter/controller/search_list_controller.dart';
-import 'package:primerapp/presenter/controller/settings_controller.dart';
 
 class HomeBinding extends Bindings {
   @override
@@ -26,16 +25,9 @@ class SearchBinding extends Bindings {
   }
 }
 
-class SettingsBinding extends Bindings{
+class AboutBinding extends Bindings {
   @override
-  void dependencies(){
-    Get.lazyPut<SettingsPageController>(() => SettingsPageController());
-  }
-}
-
-class CameraBinding extends Bindings{
-  @override
-  void dependencies(){
-    Get.lazyPut<CameraPageController>(() => CameraPageController());
+  void dependencies() {
+    Get.lazyPut<AboutPageController>(() => AboutPageController());
   }
 }

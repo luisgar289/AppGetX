@@ -1,11 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:primerapp/presenter/bindings/app_bindings.dart';
-import 'package:primerapp/presenter/views/camera_page.dart';
-import 'package:primerapp/presenter/views/home_page.dart';
+import 'package:primerapp/presenter/views/about_page.dart';
 import 'package:primerapp/presenter/views/profile_page.dart';
 import 'package:primerapp/presenter/views/search_page.dart';
-import 'package:primerapp/presenter/views/settings_page.dart';
 
 class HomeController extends GetxController {
   static HomeController get to => Get.find();
@@ -13,9 +11,8 @@ class HomeController extends GetxController {
 
   final pages = <String>[
     '/Search',
-    '/Camera',
     '/Profile',
-    '/Settings'
+    '/About'
   ];
 
   void changePage(int index) {
@@ -32,13 +29,6 @@ class HomeController extends GetxController {
         binding: SearchBinding(),
       );
     }
-    if (settings.name == '/Camera') {
-      return GetPageRoute(
-        settings: settings,
-        page: () => CameraPage(),
-        binding: CameraBinding(),
-      );
-    }
     if (settings.name == '/Profile') {
       return GetPageRoute(
         settings: settings,
@@ -46,11 +36,11 @@ class HomeController extends GetxController {
         binding: ProfileBinding(),
       );
     }
-    if (settings.name == '/Settings') {
+    if (settings.name == '/About') {
       return GetPageRoute(
         settings: settings,
-        page: () => SettingsPage(),
-        binding: SettingsBinding(),
+        page: () => AboutPage(),
+        binding: AboutBinding(),
       );
     }
     return null;
